@@ -10,4 +10,4 @@
 9. **Neural Networks** - layers of unknown variables - hidden layers - predict hidden from input and output from hidden layers-
 - #### Unsupervised
 10. **K-Means** - No labels so more like clsuters - K is hyperparameter - Start with randomly selecting centers for K clusters - And assing all data that are closest to the centers to this cluster - Calcuate the cluster center again on the basis of data points assigned to the current cluster - Then center will keep moving to the actual cluster center - Assign the data points again - Repeat until center is stablized.
-11. **PCA** - 
+11. **PCA** - Reducing features in data - Look for the correlation between the features and select the features whcih are highly correlated - PCA select features by finding the directions in which the maximum variance in the dataset is retained 
