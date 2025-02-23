@@ -18,7 +18,7 @@ def euclidian_distance(X1, X2): # This Euclidian function is the global function
 
 #declare a class called KNN
 class KNN: # it should have an init function the class.
-    def __init__(self, k=3):
+    def __init__(self, k=5):
         self.K = k
 
     # Then Each of the Class of an algorithm should have FIT function and PREDIT FUNCTION - In case of supervised Learning.
@@ -38,14 +38,15 @@ class KNN: # it should have an init function the class.
         # For global functions we do not need to use Self.
 
         distances = [euclidian_distance(x,x_train) for x_train in self.X_train] 
-        
+        # print(distances)
         # Now we need to sort the distance for finding the nearest one.
         # To sort we will use argsort from numpy which will also gives us the indices.
-
+       
         k_indices = np.argsort(distances)[:self.K]
+        # print('Nearest Indices \n',k_indices)
         k_nearest_labels = [self.y_train[i] for i in k_indices]
-
+        # print('K Nearest Label \n', k_nearest_labels)
         # Now we need to find the most common one from k_indices, so for that we will use Couter Library function most_common()
         majority_label = Counter(k_nearest_labels).most_common()
-
+        # print('Majority Label \n',majority_label)
         return majority_label[0][0]
